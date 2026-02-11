@@ -1,12 +1,24 @@
-# Ignore Jupyter Notebook checkpoints
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Jupyter
 .ipynb_checkpoints/
 
-# Ignore macOS system file
+# OS
 .DS_Store
 
-# Ignore pickle files
+# Build artifacts
+artifacts/
 *.pkl
-
-# Ignore joblib files
 *.joblib
 
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Env
+.env
