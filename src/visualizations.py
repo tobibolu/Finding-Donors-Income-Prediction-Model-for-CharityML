@@ -81,7 +81,7 @@ def plot_roc_pr_curves(model, X_test, y_test) -> None:
 
     # Precision-Recall
     precision, recall, _ = precision_recall_curve(y_test, y_proba)
-    ap = np.trapz(precision, recall)
+    ap = np.trapezoid(precision, recall)
     ax2.plot(recall, precision, lw=2, label=f"PR (AP = {ap:.3f})")
     ax2.set_xlabel("Recall")
     ax2.set_ylabel("Precision")
