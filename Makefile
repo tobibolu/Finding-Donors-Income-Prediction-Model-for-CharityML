@@ -1,4 +1,4 @@
-.PHONY: setup test lint clean
+.PHONY: setup test lint clean run-app
 
 setup:
 	pip install -r requirements.txt
@@ -12,6 +12,9 @@ lint:
 
 format:
 	ruff format src/ tests/
+
+run-app:
+	streamlit run app/streamlit_app.py
 
 clean:
 	find . -type d -name __pycache__ -exec rm -rf {} +
