@@ -4,14 +4,16 @@ A machine learning pipeline that predicts whether individuals earn above $50K an
 
 ## Key Results
 
-| Model | Test Accuracy | Test F-beta (0.5) | ROC AUC |
-|-------|--------------|-------------------|---------|
-| Logistic Regression | 84.7% | 0.710 | 0.90 |
-| Random Forest | 84.2% | 0.688 | 0.91 |
-| Gradient Boosting | **86.2%** | **0.735** | **0.92** |
-| XGBoost | 86.0% | 0.731 | 0.92 |
+| Model | Test Accuracy | Test F-beta (0.5) |
+|-------|--------------|-------------------|
+| **LightGBM** | **86.8%** | **0.750** |
+| XGBoost | 86.6% | 0.747 |
+| Gradient Boosting | 86.1% | 0.741 |
+| Logistic Regression | 84.5% | 0.698 |
+| Random Forest | 84.3% | 0.690 |
+| Decision Tree | 81.9% | 0.635 |
 
-**Top predictive features:** capital-gain (14.4%), marital status (11.4%), age (10.1%), education level (9.6%)
+**After hyperparameter tuning (Gradient Boosting):** 86.9% accuracy, 0.754 F-beta, 0.925 ROC AUC
 
 ## What Makes This Project Different
 
@@ -19,14 +21,16 @@ A machine learning pipeline that predicts whether individuals earn above $50K an
 - **Modern models**: Compares classic ML (Logistic Regression, Random Forest) with gradient boosting (XGBoost, LightGBM, GradientBoosting)
 - **Feature engineering**: Derived features (capital_net, age bins, work hour categories) beyond raw census attributes
 - **SQL analytics**: All exploratory analysis available as SQL queries with CTEs, window functions, and CASE expressions
-- **Production pipeline**: Modular Python code with proper train/test split, cross-validation, and sklearn Pipeline compatibility
+- **Production pipeline**: Modular Python code with proper train/test split, cross-validation, and reproducible preprocessing
 
 ## Project Structure
 
 ```
-├── app/                          # (Placeholder for future Streamlit dashboard)
+├── app/
+│   └── streamlit_app.py          # Interactive donor scoring dashboard
 ├── data/
-│   └── census.csv                # US Census income dataset (45,222 records)
+│   ├── census.csv                # US Census income dataset (45,222 records)
+│   └── model_features.txt        # One-hot-encoded feature names
 ├── notebooks/
 │   └── donors.ipynb              # Analysis notebook with narrative
 ├── sql/
@@ -50,6 +54,7 @@ A machine learning pipeline that predicts whether individuals earn above $50K an
 ```bash
 pip install -r requirements.txt
 make test
+make run-app    # Launch interactive dashboard
 ```
 
 ## Fairness Analysis
@@ -82,4 +87,14 @@ See [`sql/queries.sql`](sql/queries.sql) for the full query set.
 
 ## Tech Stack
 
-Python 3.11 | pandas | scikit-learn | XGBoost | LightGBM | NumPy | Matplotlib | Seaborn | SQLite | pytest
+Python 3.11 | pandas | scikit-learn | XGBoost | LightGBM | NumPy | Matplotlib | Seaborn | Streamlit | SQLite | pytest
+
+## Live Dashboard
+
+> Interactive Tableau Public dashboard: _Coming soon_
+>
+> To set up: Upload the dataset to [Tableau Public](https://public.tableau.com), build your visualizations, publish, and replace this link.
+
+## License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
