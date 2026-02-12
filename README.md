@@ -93,8 +93,6 @@ Python 3.11 | pandas | scikit-learn | XGBoost | LightGBM | NumPy | Matplotlib | 
 
 **[Launch Interactive Dashboard](https://finding-donors-income-prediction-model-for-charityml-knkpwdvgv.streamlit.app/)**
 
-> Tableau Public dashboard: _Coming soon_ — upload the dataset to [Tableau Public](https://public.tableau.com) to create additional visualizations.
-
 ## License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
