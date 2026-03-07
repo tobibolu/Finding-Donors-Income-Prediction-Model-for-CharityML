@@ -3,6 +3,7 @@
 Evaluates model predictions across protected demographic groups (race, sex)
 to identify potential biases and disparate impact.
 """
+from __future__ import annotations
 
 import numpy as np
 import pandas as pd

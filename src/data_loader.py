@@ -1,4 +1,5 @@
 """Data loading, cleaning, and preprocessing for census income prediction."""
+from __future__ import annotations
 
 import os
 import pandas as pd

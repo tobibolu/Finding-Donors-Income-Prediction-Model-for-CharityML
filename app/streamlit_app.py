@@ -157,7 +157,7 @@ elif page == "Fairness Audit":
         best_model = get_best_model(X_train, y_train)
 
     y_pred = best_model.predict(X_test)
-    fairness = fairness_summary(y_test.values, y_pred, data.iloc[y_test.index])
+    fairness = fairness_summary(y_test.values, y_pred, data.loc[y_test.index])
 
     st.subheader("Demographic Parity")
     tab1, tab2 = st.tabs(["Sex", "Race"])
