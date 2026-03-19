@@ -3,6 +3,7 @@
 Demonstrates SQL proficiency: CTEs, window functions, CASE expressions,
 aggregations with HAVING, and subqueries.
 """
+from __future__ import annotations
 
 import os
 import sqlite3

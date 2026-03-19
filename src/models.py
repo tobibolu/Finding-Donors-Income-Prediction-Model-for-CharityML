@@ -3,6 +3,7 @@
 Includes baseline models, modern gradient boosting (XGBoost, LightGBM),
 and a proper sklearn Pipeline for production readiness.
 """
+from __future__ import annotations
 
 import time
 import numpy as np

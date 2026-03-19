@@ -1,10 +1,16 @@
 """Visualization utilities for the donor prediction project."""
+from __future__ import annotations
 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.metrics import roc_curve, auc, precision_recall_curve
+from sklearn.metrics import (
+    average_precision_score,
+    precision_recall_curve,
+    roc_curve,
+    auc,
+)
 
 
 def plot_income_distribution(data: pd.DataFrame) -> None:
@@ -81,7 +87,7 @@ def plot_roc_pr_curves(model, X_test, y_test) -> None:
 
     # Precision-Recall
     precision, recall, _ = precision_recall_curve(y_test, y_proba)
-    ap = np.trapezoid(precision, recall)
+    ap = average_precision_score(y_test, y_proba)
     ax2.plot(recall, precision, lw=2, label=f"PR (AP = {ap:.3f})")
     ax2.set_xlabel("Recall")
     ax2.set_ylabel("Precision")

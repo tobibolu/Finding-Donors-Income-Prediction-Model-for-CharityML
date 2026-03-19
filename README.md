@@ -6,14 +6,14 @@ A machine learning pipeline that predicts whether individuals earn above $50K an
 
 | Model | Test Accuracy | Test F-beta (0.5) |
 |-------|--------------|-------------------|
-| **LightGBM** | **86.8%** | **0.750** |
-| XGBoost | 86.6% | 0.747 |
-| Gradient Boosting | 86.1% | 0.741 |
+| **Gradient Boosting** | **86.1%** | **0.741** |
 | Logistic Regression | 84.5% | 0.698 |
 | Random Forest | 84.3% | 0.690 |
 | Decision Tree | 81.9% | 0.635 |
 
 **After hyperparameter tuning (Gradient Boosting):** 86.9% accuracy, 0.754 F-beta, 0.925 ROC AUC
+
+_Note: XGBoost and LightGBM are evaluated automatically when their optional dependencies are installed._
 
 ## What Makes This Project Different
 
